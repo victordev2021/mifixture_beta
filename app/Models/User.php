@@ -58,4 +58,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+    // VAT CODE
+    // Relación Ligas uno a muchos
+    public function leagues()
+    {
+        return $this->hasMany(League::class);
+    }
 }
