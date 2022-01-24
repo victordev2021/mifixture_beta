@@ -17,13 +17,14 @@ class CreateLeaguesTable extends Migration
             $table->id();
             $table->string('name', 30);
             $table->string('universe', 30);
-            $table->string('speciality', 30);
             $table->string('membership', 30);
 
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('speciality_id');
             $table->unsignedBigInteger('municipality_id');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade');
             $table->foreign('municipality_id')->references('id')->on('municipalities')->onDelete('cascade');
 
             $table->timestamps();

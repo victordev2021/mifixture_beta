@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Municipality;
+use App\Models\Speciality;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,9 +23,9 @@ class LeagueFactory extends Factory
         return [
             'name' => 'Liga ' . $this->faker->firstName(),
             'universe' => $universe[rand(0, 3)],
-            'speciality' => $speciality[rand(0, 3)],
             'membership' => $this->faker->lastName(),
             'user_id' => User::all()->random()->id,
+            'speciality_id' => Speciality::all()->random()->id,
             'municipality_id' => Municipality::all()->random()->id,
         ];
     }

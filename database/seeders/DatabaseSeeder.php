@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Department;
 use App\Models\Province;
+use App\Models\Speciality;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(DepartmentSeeder::class);
         $this->call(ProvinceSeeder::class);
+        $this->call(SpecialitySeeder::class);
         $this->call(MunicipalitySeeder::class);
         $this->call(LeagueSeeder::class);
         $this->call(TournamentSeeder::class);
